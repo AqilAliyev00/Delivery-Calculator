@@ -1,4 +1,4 @@
 package aliyev;
 
-record Delivery(double distance, String size, boolean fragile, String load) {
+public record Delivery(double distance, String size, boolean fragile, String load) {
 }

@@ -1,6 +1,6 @@
 package aliyev;
 
-class DeliveryCostCalculator {
+public class DeliveryCostCalculator {
     public int calculateCost(Delivery delivery) {
         if (delivery.fragile() && delivery.distance() > 30) {
             throw new IllegalArgumentException("Хрупкие грузы нельзя доставлять на расстояние более 30 км.");
@@ -36,7 +36,7 @@ class DeliveryCostCalculator {
             default -> 1.0;
         };
 
-        cost = (int) (cost * multiplier);
+        cost = (int) Math.ceil(cost * multiplier);
         return Math.max(cost, 400);
     }
 }
